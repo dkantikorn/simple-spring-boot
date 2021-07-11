@@ -1,22 +1,33 @@
-package com.example.demo.student;
+package com.example.demo.model.student;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 
+import javax.persistence.*;
 import java.time.LocalDate;
-import java.util.Date;
 
+@Entity
 @JsonAutoDetect(fieldVisibility = JsonAutoDetect.Visibility.ANY)
-public class Student {
+public class Students {
+    @Id
+    @SequenceGenerator(
+            name = "students_sequence",
+            sequenceName = "students_sequence",
+            allocationSize = 1
+    )
+    @GeneratedValue(
+            strategy = GenerationType.AUTO,
+            generator = "students_sequence"
+    )
     private Long id;
     private String name;
     private String email;
     private LocalDate dob;
     private Integer age;
 
-    public Student() {
+    public Students() {
     }
 
-    public Student(Long id, String name, String email, LocalDate dob, Integer age) {
+    public Students(Long id, String name, String email, LocalDate dob, Integer age) {
         this.id = id;
         this.name = name;
         this.email = email;
@@ -24,7 +35,7 @@ public class Student {
         this.age = age;
     }
 
-    public Student(String name, String email, LocalDate dob, Integer age) {
+    public Students(String name, String email, LocalDate dob, Integer age) {
         this.name = name;
         this.email = email;
         this.dob = dob;
