@@ -19,15 +19,13 @@ public class StudentConfig {
             Students pogemon = new Students(
                     "Pogemon",
                     "pogemon@gmail.com",
-                    LocalDate.of(2000, Month.JANUARY, 01),
-                    21
+                    LocalDate.of(2000, Month.JANUARY, 01)
             );
 
             Students pikachu = new Students(
                     "Pikachu",
                     "pickachu@gmail.com",
-                    LocalDate.of(2005, Month.SEPTEMBER, 23),
-                    16
+                    LocalDate.of(2005, Month.SEPTEMBER, 23)
             );
 
             repository.saveAll(
