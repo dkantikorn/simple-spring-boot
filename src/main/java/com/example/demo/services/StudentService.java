@@ -1,14 +1,11 @@
 package com.example.demo.services;
 
-import com.example.demo.model.student.Students;
+import com.example.demo.entity.student.Students;
 import com.example.demo.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.beans.Transient;
-import java.time.LocalDate;
-import java.time.Month;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -68,6 +65,7 @@ public class StudentService {
      * @param name      as student name
      * @param email     as student of email
      */
+//    @Transactional(rollbackFor = {Exception.class})
     @Transactional
     public void updateStudent(Long studentId, String name, String email) {
         Students student = studentRepository

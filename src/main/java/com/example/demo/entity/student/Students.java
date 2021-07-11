@@ -1,4 +1,4 @@
-package com.example.demo.model.student;
+package com.example.demo.entity.student;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
 
