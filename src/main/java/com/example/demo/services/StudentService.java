@@ -4,7 +4,6 @@ import com.example.demo.entity.student.Students;
 import com.example.demo.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
 import javax.transaction.Transactional;
 import java.util.List;
 import java.util.Objects;
@@ -36,7 +35,7 @@ public class StudentService {
      */
     public void registerNewStudent(Students student) {
 
-        Optional<Students> studentOptional = studentRepository.findStudensByEmail(student.getEmail());
+        Optional<Students> studentOptional = studentRepository.findStudentsByEmail(student.getEmail());
         if (studentOptional.isPresent()) {
             throw new IllegalStateException("The Email is already taken");
         }
@@ -78,7 +77,7 @@ public class StudentService {
         }
 
         if (email != null && email.length() > 0 && !Objects.equals(student.getEmail(), email)) {
-            Optional<Students> studentOptional = studentRepository.findStudensByEmail(email);
+            Optional<Students> studentOptional = studentRepository.findStudentsByEmail(email);
             if(studentOptional.isPresent()){
                 throw new IllegalStateException("student email = " + email + " already taken");
             }

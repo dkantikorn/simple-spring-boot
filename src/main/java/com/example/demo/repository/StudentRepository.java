@@ -12,7 +12,7 @@ import java.util.Optional;
 public interface StudentRepository extends JpaRepository<Students, Long> {
 
     @Query("SELECT s FROM Students s WHERE s.email = ?1")
-    Optional<Students> findStudensByEmail(String email);
+    Optional<Students> findStudentsByEmail(String email);
 
 //    @Modifying //ถ้ามีการแก้ไขเปลี่ยนแปลงข้อมูลต้องมี @Modifying เสมอ เช่นการ update หรือ delete
 //    @Query("UPDATE Students student SET student.deleted = ?2 WHERE nws = ?1")

@@ -1,11 +1,11 @@
 package com.example.demo.controllers;
 
-import com.example.demo.services.StudentService;
 import com.example.demo.entity.student.Students;
+import com.example.demo.services.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.*;
-
 import java.util.List;
+
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping(path = "api/v1/student")
@@ -40,6 +40,7 @@ public class StudentsController {
     ) {
         studentService.updateStudent(studentId, name, email);
     }
+
 //    @GetMapping("/student")
 //    @GetMapping
 //    public List<Student> getStudent(){
