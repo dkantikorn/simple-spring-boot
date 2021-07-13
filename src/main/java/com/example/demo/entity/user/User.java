@@ -1,9 +1,7 @@
 package com.example.demo.entity.user;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
-import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -23,4 +21,45 @@ public class User {
     private String name;
     @NotBlank(message = "email is mandatory")
     private String email;
+
+    public User() {
+    }
+
+    public User(@NotBlank(message = "name is mandatory") String name, @NotBlank(message = "email is mandatory") String email) {
+        this.name = name;
+        this.email = email;
+    }
+//
+//    public Long getId() {
+//        return id;
+//    }
+//
+//    public void setId(Long id) {
+//        this.id = id;
+//    }
+//
+//    public String getName() {
+//        return name;
+//    }
+//
+//    public void setName(String name) {
+//        this.name = name;
+//    }
+//
+//    public String getEmail() {
+//        return email;
+//    }
+//
+//    public void setEmail(String email) {
+//        this.email = email;
+//    }
+//
+//    @Override
+//    public String toString() {
+//        return "User{" +
+//                "id=" + id +
+//                ", name='" + name + '\'' +
+//                ", email='" + email + '\'' +
+//                '}';
+//    }
 }
