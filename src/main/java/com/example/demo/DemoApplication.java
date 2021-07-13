@@ -29,7 +29,7 @@ public class DemoApplication {
         Students student = new Students("sarawutt bureekeaw", "sarawutt.b@gmail.com", LocalDate.of(1986, Month.SEPTEMBER, 23));
         model.addAttribute("welcomeMessage", hello);
         model.addAttribute("students", student);
-        return "/home/index";
+        return "home/index";
     }
 
 //    @GetMapping("/")
