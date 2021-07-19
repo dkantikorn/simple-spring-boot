@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layouts/mainLayout}"
+>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>Getting Started : Serving Web Content</title>
-    <link rel="stylesheet" href="/css/main.css"/>
+    <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">
+        Getting Started : Serving Web Content
+    </title>
 </head>
 <body>
-<div class="page-content">
+<div class="page-content" layout:fragment="content">
     <h1 th:text="${welcomeMessage}"></h1><br>
     <span th:text="${students.name}"></span><br>
     <span th:text="${students.email}"></span><br>

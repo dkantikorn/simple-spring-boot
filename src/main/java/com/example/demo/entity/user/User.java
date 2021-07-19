@@ -4,7 +4,9 @@ import com.fasterxml.jackson.annotation.JsonAutoDetect;
 import lombok.*;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 
 @Data
@@ -18,8 +20,10 @@ public class User {
     private Long id;
 
     @NotBlank(message = "name is mandatory")
+    @Size(min = 2, max = 100 , message = "Please provide name length between 2 - 100")
     private String name;
     @NotBlank(message = "email is mandatory")
+    @Email(message = "Please provide valid email")
     private String email;
 
     public User() {
