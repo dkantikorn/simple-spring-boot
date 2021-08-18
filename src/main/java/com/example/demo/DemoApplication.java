@@ -14,7 +14,6 @@ import java.time.LocalDate;
 import java.time.Month;
 import java.util.logging.Logger;
 
-@EnableAutoConfiguration
 @SpringBootApplication
 @Controller
 public class DemoApplication {
